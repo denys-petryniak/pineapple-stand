@@ -18,7 +18,7 @@ const active = ref(false);
     </span>
     <!-- Modal Overlay only shows when cart is clicked on -->
     <AppModalOverlay :active="active" @close="active = false">
-      <div v-if="!cartStore.n">
+      <div v-if="!cartStore.isEmpty">
         <ul class="items-in-cart">
           <CartItem
             v-for="(items, name) in cartStore.grouped"
@@ -33,7 +33,9 @@ const active = ref(false);
           Total: <strong>$40</strong>
         </div>
         <div class="flex justify-end">
-          <AppButton class="secondary mr-2">Clear Cart</AppButton>
+          <AppButton class="secondary mr-2" @click="cartStore.$reset()"
+            >Clear Cart</AppButton
+          >
           <AppButton class="primary">Checkout</AppButton>
         </div>
       </div>
