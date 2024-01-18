@@ -8,6 +8,15 @@ const productStore = useProductStore();
 productStore.fill();
 
 const cartStore = useCartStore();
+
+cartStore.$onAction(({ name, args, after, onError }) => {
+  if (name === "addItems") {
+    after(() => console.log(`Added ${args[0]} items to cart`));
+    onError((error) =>
+      console.log(`Failed to add items to cart: ${error.message}`)
+    );
+  }
+});
 </script>
 
 <template>
