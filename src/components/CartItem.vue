@@ -6,6 +6,7 @@ defineProps({
 
 defineEmits(["updateCount", "clear"]);
 </script>
+
 <template>
   <li>
     <span>{{ product.name }}</span>
@@ -18,7 +19,7 @@ defineEmits(["updateCount", "clear"]);
         >${{ count * product.price }}</span
       >
       <span class="ml-4" @click="$emit('clear')">
-        <fa icon="trash-alt" />
+        <Fa icon="trash-alt" />
       </span>
     </span>
   </li>

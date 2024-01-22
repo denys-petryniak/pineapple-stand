@@ -1,6 +1,9 @@
 <script setup>
 defineProps({
-  modelValue: { type: [Number, String], default: 0 },
+  modelValue: {
+    type: [Number, String],
+    default: 0,
+  },
 });
 
 const emit = defineEmits(["update:modelValue", "input"]);
@@ -10,6 +13,7 @@ const updateValue = (value) => {
   }
 };
 </script>
+
 <template>
   <span>
     <button
@@ -40,6 +44,7 @@ input[type="number"] {
   border: 1px solid gray;
   @apply border-gray-500 w-10 text-center;
 }
+
 button {
   border: 1px solid gray;
 }
