@@ -1,16 +1,22 @@
-# Pinia, The Enjoyable Vue Store 
-## Boilerplate Code
+# Pineapple Stand
+*This project is dedicated to learning Pinia, the officially recommended state management solution for Vue.js.*
 
-![Course Feature Image](https://vueschool.io/media/bc6229f7525d1df7f87bd22604eaa468/Pinia_not-transparent.png)
+<img width="995" alt="image" src="https://github.com/denys-petryniak/pineapple-stand/assets/16530588/d74e6aef-e40f-44d5-8ffa-9f86e94e1b9a">
 
-## How to Use
+## Project setup
 
-```
-npx degit  vueschool/pinia-course-boilerplate 
-```
 ```
 npm install
-npm run dev
 ```
 
-[Checkout the course!](https://vueschool.io/courses/pinia-the-enjoyable-vue-store)
+### Compiles and hot-reloads for development
+
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+
+```
+npm run build
+```
