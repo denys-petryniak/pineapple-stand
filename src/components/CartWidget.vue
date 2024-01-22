@@ -1,10 +1,17 @@
 <script setup>
 import { ref } from "vue";
-import CartItem from "./CartItem.vue";
+import CartItem from "@/components/CartItem.vue";
 import { useCartStore } from "@/stores/CartStore";
 
 const cartStore = useCartStore();
 const active = ref(false);
+
+const resetCartStore = () => {
+  // cartStore.$reset() - does not work because of persisted state
+  cartStore.$patch((state) => {
+    state.items = [];
+  });
+};
 </script>
 
 <template>
@@ -31,9 +38,9 @@ const active = ref(false);
           Total: <strong class="ml-2">${{ cartStore.total }}</strong>
         </div>
         <div class="flex justify-end">
-          <AppButton class="secondary mr-2" @click="cartStore.$reset()"
-            >Clear Cart</AppButton
-          >
+          <AppButton class="secondary mr-2" @click="resetCartStore">
+            Clear Cart
+          </AppButton>
           <AppButton class="primary" @click="cartStore.checkout"
             >Checkout</AppButton
           >
